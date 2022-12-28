@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300&family=Chakra+Petch&family=Lato:wght@100&family=Press+Start+2P&family=Rubik+Glitch&display=swap');
+body{
+	font-family: 'Chakra Petch', sans-serif;
+	/* background-image: url(https://technabob.com/blog/wp-content/uploads/2011/11/sasson-islandstudy.gif); */
+	background-color: rgb(92, 41, 140);
+
+}
+h1{
+	color: #fff;
+}
+#container{
+	width: 1080px;
+	height:600px;
+}
+#calculator{
+	position: absolute;
+    right: 50;
+    left: 50;
+	width: 320px;
+	height: 450px;
+	background-color: rgb(125, 83, 162);
+	margin: 10px auto;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#result{
+	height: 120px;	
+}
+#history{
+	text-align: right;
+	height: 20px;
+	margin: 0 20px;
+	padding-top: 20px;
+	font-size: 15px;
+	color: #a49c9c;
+}
+#output{
+	text-align: right;
+	height: 60px;
+	margin: 10px 20px;
+	font-size: 30px;
+}
+
+.grp{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.img1 {
+    position: relative;
+        width: 100px;
+        height: 100px;
+}
+
+.operator, .number, .empty{
+	width: 50px;
+	height: 50px;
+	margin: 15px;
+	float: left;
+	border-radius: 50%;
+	border-width: 0;
+	font-weight: bold;
+	font-size: 15px;
+	color: rgb(0, 0, 0);
+}
+.number, .empty{
+	background-color: rgb(102, 68, 133);
+
+}
+.number, .operator{
+	cursor: pointer;
+}
+.operator:active, .number:active{
+	font-size: 13px;
+}
+.operator:focus, .number:focus, .empty:focus{
+	outline: 0;
+}
+.operator{
+	background-color: rgb(160, 126, 188);
+}
+.number:hover{
+	background-color: rgb(163, 135, 186);}
+.operator:hover{
+	background-color: rgb(163, 135, 186);
+
+}

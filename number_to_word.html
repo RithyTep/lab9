@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300&family=Chakra+Petch&family=Lato:wght@100&family=Press+Start+2P&family=Rubik+Glitch&display=swap');
+:root{
+    --lato-font-family: 'Chakra Petch', sans-serif;
+}   
+    h1{
+        color: #fff;
+        margin-top: 200px;
+    }
+    body {
+        font-family: 'Chakra Petch', sans-serif;
+        padding: 0;
+        margin: 0;
+        background-image: url(https://images3.alphacoders.com/125/1253493.jpg);
+        background-position: center;
+        background-size: cover;
+        /* background-repeat: no-repeat; */
+    }
+    .result{
+        width:300px;
+        background-color: gainsboro;
+        margin: auto;
+        color: #000;
+        height: 50px;
+    }
+    .btn{
+    left: 2%;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 0;
+    border: 1px solid #fff;
+    padding: 10px 30px;
+    cursor: pointer;
+    }
+    .container{
+        color: #fff;
+        padding: 20px;
+        margin: 20px auto;
+        text-align: center;
+        /* background-position: center;
+        background-repeat: no-repeat; */
+    }
+</style>
+<body>
+    <div class="container">
+        <label for="">Enter amount:</label> <br>
+        <input type="number"id="numberInput"/> <br><br>
+        <button type="button" class="btn" onclick="doConvert();">Convert to words</button>
+        <br><br>
+        <div class="result" id="result"><div>
+    </div>
+    <br><br>
+
+    <h1>KonKhmer Converter</h1>
+
+    <script>
+            function doConvert (){
+            let numberInput = document.querySelector('#numberInput').value ;
+            let myDiv = document.querySelector('#result');
+
+            let oneToTwenty = ['','one ','two ','three ','four ', 'five ','six ','seven ','eight ','nine ','ten ',
+            'eleven ','twelve ','thirteen ','fourteen ','fifteen ','sixteen ','seventeen ','eighteen ','nineteen '];
+            let tenth = ['', '', 'twenty','thirty','forty','fifty', 'sixty','seventy','eighty','ninety'];
+
+            if(numberInput.toString().length > 7) return myDiv.innerHTML = 'overlimit' ;
+            console.log(numberInput);
+        let num = ('0000000'+ numberInput).slice(-7).match(/^(\d{1})(\d{1})(\d{2})(\d{1})(\d{2})$/);
+            console.log(num);
+            if(!num) return;
+
+            let outputText = num[1] != 0 ? (oneToTwenty[Number(num[1])] || `${tenth[num[1][0]]} ${oneToTwenty[num[1][1]]}` )+' million ' : ''; 
+        
+            outputText +=num[2] != 0 ? (oneToTwenty[Number(num[2])] || `${tenth[num[2][0]]} ${oneToTwenty[num[2][1]]}` )+'hundred ' : ''; 
+            outputText +=num[3] != 0 ? (oneToTwenty[Number(num[3])] || `${tenth[num[3][0]]} ${oneToTwenty[num[3][1]]}`)+' thousand ' : ''; 
+            outputText +=num[4] != 0 ? (oneToTwenty[Number(num[4])] || `${tenth[num[4][0]]} ${oneToTwenty[num[4][1]]}`) +'hundred ': ''; 
+            outputText +=num[5] != 0 ? (oneToTwenty[Number(num[5])] || `${tenth[num[5][0]]} ${oneToTwenty[num[5][1]]} `) : ''; 
+
+            myDiv.innerHTML = outputText;
+        }
+    </script>
+</body>
+</html>

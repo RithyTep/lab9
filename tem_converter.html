@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300&family=Chakra+Petch&family=Lato:wght@100&family=Press+Start+2P&family=Rubik+Glitch&display=swap');
+
+    h1{
+        margin-top: 10px;
+        text-align: center;
+        color: #fff;
+    }
+    body {
+        font-family: 'Chakra Petch', sans-serif;
+        background-color: rgb(125, 83, 162);
+    }
+    .result{
+      border: #fff;
+      width: 188px;
+      height: 30px;
+      background-color: #fff;
+      color: #000;
+    }
+    .btn{
+        left: 2%;
+        background-color: transparent;
+        color: #fff;
+        border-radius: 0;
+        border: 1px solid #fff;
+        padding: 10px 30px;
+        cursor: pointer;
+    }
+    .inside{  
+        align-items: center;
+        width: 500px;
+        color: #fff;
+        padding: 20px 0px 20px 0px;
+        margin: 20px auto;
+        text-align: center;
+        border-radius: 10px;
+        background-color: rgb(96, 67, 120);
+    }
+    .flex{
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        text-align: center;
+    }
+    .grp{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+   .img1 {
+    position: relative;
+        width: 100px;
+        height: 100px;
+   }
+   .img2 {
+        width: 300px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+   }
+</style>
+<body>
+    <div class="grp">
+        <img class="img1" src="https://static.wixstatic.com/media/edc28b_fd4f51d1dffd4680807b301307ac3979~mv2.gif" alt=""><h1>KonKhmer Temperatur Conversion</h1>
+        <img class="img1" src="https://media0.giphy.com/media/bxRuoWEJG7mso/200w.gif?cid=6c09b952x6utksa8zl9k17sz8jps9w4t6l2k55wax7nsb2t9&rid=200w.gif&ct=s" alt="">
+    </div>
+    <div class="container">
+        <div class="inside">
+        <div class="flex">
+            <div class="block">
+                <label for="">Celsius</label> <br>
+              <input type="number"id="myText" placeholder="___°C"/>
+            </div>
+            <div class="block">
+                <label for="">Fehrenheit</label> <br>
+                <div class="result" id="result"/> <br> <br>
+            </div>
+        </div>
+      </div><br>
+       <button type="button" class="btn" id="myButton">Start</button>
+    </div>
+    <p style="text-align: center;">#
+        Formula	
+        (0°C × 9/5) + 32 = 32°F
+        </p>
+        <img class="img2" src="https://i.seadn.io/gae/mWPDu7NChC3JHQhnxuymMDzgHnWZyBriHkbKdmIp6qp62kBdb7x0v9hFdjolKrZs2SCbkofDklfXqQTv3troTHW4H5R5fVe_m-uwBQ?auto=format&w=512" alt=""> <br>
+        <p style="text-align: center; color: #fff; font-style: inherit;" >Kon khmer min del klach</p>
+    <script>
+          
+            document.getElementById("myButton").onclick = function() {
+
+                var values = document.getElementById("myText").value;
+                var f = (values * 9/5) + 32;
+                document.getElementById("result").innerHTML = f + "°F";    
+            }
+    </script>
+</body>
+</html> 
